@@ -42,7 +42,7 @@ def auth_view(request):
 		auth.login(request,user)
 		return HttpResponseRedirect('/loggedin') #Logged in page
 	else: 
-		return HttpResponseRedirect('/accounts/invalid'); # Invalid login page
+		return HttpResponseRedirect('/invalid'); # Invalid login page
 
 def loggedin(request):
 	return render('loggedin.html', {'full_name': request.user.username});	# Logged in page
