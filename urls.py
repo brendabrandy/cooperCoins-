@@ -19,13 +19,13 @@ import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^index/$',views.index),
+    url(r'^login/$',views.login),
     url(r'^transaction/$',views.transaction),
-    url(r'^register/$',views.register),
+    #url(r'^register/$',views.register),
     url(r'^checkbook/$',views.checkbook),
-    url(r'^auth/$', views.auth_view),
+    url(r'^accounts/auth/$', views.auth_view),
     url(r'^loggedin/$', views.loggedin),
-    url(r'^invalid/$', views.invalid_login), 
+    url(r'^accounts/invalid/$', views.invalid_login), 
     url(r'^logout/$', views.logout),
     url(r'^register/$', views.register_user), 
     url(r'^register_success/$', views.register_success)

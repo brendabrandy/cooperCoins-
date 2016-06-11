@@ -9,14 +9,10 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 
-
-
 <body>
-
 <div class="container">
-<h1>COOPER CASH&#8253;</h1>
-      <!-- Static navbar -->
-      <nav class="navbar navbar-default" role="navigation">
+  <h1>COOPER CASH&#8253;</h1>
+  <nav class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -37,30 +33,41 @@
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
-
-    <div class="container">
-
-      <form class="form-signin">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      </form>
-
-    </div> <!-- /container -->   
-
 </div>
 
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+    
+          <form class="form-horizontal" action="/register/" method="POST">{% csrf_token %}
+          {{form}}
+            <div class="control-group">
+              <!-- Button -->
+              <div class="controls">
+                <button class="btn btn-success" style="background-color:#337ab7" type="submit" value="Register">Register</button>
+              </div>
+            </div>
+         
+        </form>
+    
+    </div> 
+  </div>
+</div>
 
 </body>
 
-</html>
+<script>
+$( #password ).on( "submit", function( event ) {
+  event.preventDefault();
+  var formString = $( this ).serialize(); // All data in one String.
+  var encrypted = CryptoJS.AES.encrypt(formString, "Secret Passphrase");
+  //Now use $.post here to send post data to your backend.
+});
+</script>
+
+
+
+
+
 
 
